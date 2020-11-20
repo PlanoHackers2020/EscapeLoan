@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Formik, Form, Field } from 'formik';
 import { Button, LinearProgress } from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { DatePicker } from 'formik-material-ui-pickers';
 import DayjsUtils from '@date-io/dayjs';
+import MatUiStyles from './MatUiStyles';
+
 
 interface Props {
   firstStep: boolean;
@@ -15,23 +16,9 @@ interface Props {
   handleReset: () => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    button: {
-      margin: theme.spacing(1),
-    },
-    progressBar: {
-      width: '100%',
-    },
-
-    textField: {
-      margin: theme.spacing(1),
-    },
-  })
-);
 
 export default function PriorLoanForm(props: Props) {
-  const classes = useStyles();
+  const classes = MatUiStyles();
 
   return (
     <div>

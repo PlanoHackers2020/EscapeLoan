@@ -6,6 +6,7 @@ import { TextField } from 'formik-material-ui';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { DatePicker } from 'formik-material-ui-pickers';
 import DayjsUtils from '@date-io/dayjs';
+import MatUiStyles from './MatUiStyles';
 
 interface Values {
   email: string;
@@ -20,23 +21,8 @@ interface Props {
   handleReset: () => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    button: {
-      margin: theme.spacing(1),
-    },
-    progressBar: {
-      width: '100%',
-    },
-
-    textField: {
-      margin: theme.spacing(1),
-    },
-  })
-);
-
 export default function BasicInfoForm(props: Props) {
-  const classes = useStyles();
+  const classes = MatUiStyles();
 
   return (
     <div>

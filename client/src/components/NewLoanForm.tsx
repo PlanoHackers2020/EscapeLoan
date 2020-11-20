@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Formik, Form, Field } from 'formik';
 import { Button, LinearProgress, MenuItem } from '@material-ui/core';
 import { TextField, Select } from 'formik-material-ui';
+import MatUiStyles from './MatUiStyles';
+
 
 interface Props {
   firstStep: boolean;
@@ -12,23 +13,8 @@ interface Props {
   handleReset: () => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    button: {
-      margin: theme.spacing(1),
-    },
-    progressBar: {
-      width: '100%',
-    },
-
-    textField: {
-      margin: theme.spacing(1),
-    },
-  })
-);
-
 export default function NewLoanForm(props: Props) {
-  const classes = useStyles();
+  const classes = MatUiStyles();
 
   return (
     <div>

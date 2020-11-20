@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import MatUiStyles from './MatUiStyles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -9,27 +9,12 @@ import BasicInfoForm from './BasicInfoFrom';
 import PriorLoanForm from './PriorLoanForm';
 import NewLoanForm from './NewLoanForm';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: '100%',
-    },
-    backButton: {
-      marginRight: theme.spacing(1),
-    },
-    instructions: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(1),
-    },
-  })
-);
-
 function getSteps() {
   return ['Basic Information', 'Prior Loan Details', 'New Loan Request'];
 }
 
 export default function RequestStepper() {
-  const classes = useStyles();
+  const classes = MatUiStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
