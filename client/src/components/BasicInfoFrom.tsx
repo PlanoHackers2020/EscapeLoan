@@ -52,13 +52,22 @@ export default function BasicInfoForm(props: Props) {
           {({ submitForm, isSubmitting }) => (
             <Form>
               <Field
-                fullWidth
+                halfWidth
                 className={classes.textField}
                 component={TextField}
                 name="firstName"
                 type="text"
                 label="First Name"
+                style = {{width: "35%"}}
               />
+              <Field
+                className={classes.textField}
+                component={TextField}
+                name="middleInitial"
+                type="text"
+                label="Middle Initial"
+                style = {{width: "10%"}}
+              />    
               <Field
                 fullWidth
                 className={classes.textField}
@@ -66,7 +75,39 @@ export default function BasicInfoForm(props: Props) {
                 name="lastName"
                 type="text"
                 label="Last Name"
+                style = {{width: "35%"}}
               />
+                      
+              <Field
+                className={classes.textField}
+                component={TextField}
+                name="genSuffix"
+                type="text"
+                label="Jr, Sr, III, ect."
+                style = {{width: "10%"}}
+              />
+              <br/>
+              <br/>
+              <br/>
+              <Field
+                className={classes.textField}
+                component={TextField}
+                name="socialSecurity"
+                type="text"
+                label="SSN"
+                style = {{width: "45%"}}
+              />                      
+              <Field
+                fullWidth
+                format="YYYY-MM-DD"
+                component={DatePicker}
+                name="dateOfBirth"
+                label="Date of Birth"
+                style = {{width: "50%"}}
+              />
+              <br/>
+              <br/>
+              <br/>
               <Field
                 fullWidth
                 className={classes.textField}
@@ -74,6 +115,7 @@ export default function BasicInfoForm(props: Props) {
                 name="email"
                 type="email"
                 label="Email"
+                style = {{width: "45%"}}
               />
               <Field
                 fullWidth
@@ -82,14 +124,13 @@ export default function BasicInfoForm(props: Props) {
                 type="text"
                 label="Phone"
                 name="phone"
+                style = {{width: "30%"}}
               />
-              <Field
-                fullWidth
-                format="YYYY-MM-DD"
-                component={DatePicker}
-                name="dateOfBirth"
-                label="Date of Birth"
-              />
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+
               {isSubmitting && (
                 <LinearProgress className={classes.progressBar} />
               )}
